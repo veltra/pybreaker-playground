@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  playground:
+    build: .
+    volumes:
+      - .:/code
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
