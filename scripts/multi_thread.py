@@ -16,8 +16,10 @@ def fragile_function():
 
 def main(thread_id, breaker):
     while True:
-        print('#{} {} '.format(thread_id,
-                              datetime.now().strftime('%Y-%m-%d %H:%M:%S')), end='')
+        print('#{} {} '.format(
+            thread_id,
+            datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        ), end='')
 
         try:
             breaker.call(fragile_function)
@@ -29,10 +31,14 @@ def main(thread_id, breaker):
 
 
 redis_conn = redis.StrictRedis(host='redis', port=6379)
+storage = pybreaker.CircuitRedisStorage(
+    pybreaker.STATE_CLOSED, redis_conn
+)
 breaker = pybreaker.CircuitBreaker(
     fail_max=2,
     reset_timeout=5,
-    state_storage=pybreaker.CircuitRedisStorage(pybreaker.STATE_CLOSED, redis_conn))
+    state_storage=storage
+)
 breaker.close()
 
 thread1 = threading.Thread(target=main, args=(1, breaker))
