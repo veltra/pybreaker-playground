@@ -31,50 +31,46 @@ $ docker-compose down
 ### Single Thread Script
 ```
 $ docker-compose run --rm playground python scripts/single_thread.py
-2018-07-27 01:51:17 OK
-2018-07-27 01:51:18 OK
-2018-07-27 01:51:19 NG / <class 'Exception'> This is a sample Exception
-2018-07-27 01:51:20 NG / <class 'pybreaker.CircuitBreakerError'> Failures threshold reached, circuit breaker opened
-2018-07-27 01:51:21 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-2018-07-27 01:51:22 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-2018-07-27 01:51:23 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-2018-07-27 01:51:24 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-2018-07-27 01:51:25 NG / <class 'pybreaker.CircuitBreakerError'> Trial call failed, circuit breaker opened
-2018-07-27 01:51:26 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-2018-07-27 01:51:27 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-2018-07-27 01:51:28 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-2018-07-27 01:51:29 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-2018-07-27 01:51:30 OK
-2018-07-27 01:51:31 OK
+2018-07-27 08:05:12 / OK
+2018-07-27 08:05:13 / NG / <class 'Exception'> This is a sample Exception
+2018-07-27 08:05:14 / OK
+2018-07-27 08:05:15 / OK
+2018-07-27 08:05:16 / NG / <class 'Exception'> This is a sample Exception
+2018-07-27 08:05:17 / NG / <class 'pybreaker.CircuitBreakerError'> Failures threshold reached, circuit breaker opened
+2018-07-27 08:05:18 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+2018-07-27 08:05:19 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+2018-07-27 08:05:20 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+2018-07-27 08:05:21 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+2018-07-27 08:05:22 / NG / <class 'pybreaker.CircuitBreakerError'> Trial call failed, circuit breaker opened
+2018-07-27 08:05:23 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+2018-07-27 08:05:24 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+2018-07-27 08:05:25 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+2018-07-27 08:05:26 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+2018-07-27 08:05:27 / OK
+2018-07-27 08:05:28 / OK
 ```
 
 ### Multi Thread Script
 ```
 $ docker-compose run --rm playground python scripts/multi_thread.py
-#1 2018-07-27 01:57:33 OK
-#2 2018-07-27 01:57:34 OK
-#1 2018-07-27 01:57:35 NG / <class 'Exception'> This is a sample Exception
-#2 2018-07-27 01:57:36 NG / <class 'pybreaker.CircuitBreakerError'> Failures threshold reached, circuit breaker opened
-#1 2018-07-27 01:57:37 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-#2 2018-07-27 01:57:38 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-#1 2018-07-27 01:57:39 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-#2 2018-07-27 01:57:40 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-#1 2018-07-27 01:57:41 NG / <class 'pybreaker.CircuitBreakerError'> Trial call failed, circuit breaker opened
-#2 2018-07-27 01:57:42 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-#1 2018-07-27 01:57:43 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-#2 2018-07-27 01:57:44 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-#1 2018-07-27 01:57:45 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-#2 2018-07-27 01:57:46 OK
-#1 2018-07-27 01:57:47 OK
-#2 2018-07-27 01:57:48 OK
-#1 2018-07-27 01:57:49 OK
-#2 2018-07-27 01:57:50 OK
-#1 2018-07-27 01:57:51 NG / <class 'Exception'> This is a sample Exception
-#2 2018-07-27 01:57:52 NG / <class 'pybreaker.CircuitBreakerError'> Failures threshold reached, circuit breaker opened
-#1 2018-07-27 01:57:53 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-#2 2018-07-27 01:57:54 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-#1 2018-07-27 01:57:55 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-#2 2018-07-27 01:57:56 <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
-#1 2018-07-27 01:57:57 OK
-#2 2018-07-27 01:57:58 OK
+#1 2018-07-27 08:06:40 / OK
+#2 2018-07-27 08:06:41 / OK
+#1 2018-07-27 08:06:42 / NG / <class 'Exception'> This is a sample Exception
+#2 2018-07-27 08:06:43 / NG / <class 'pybreaker.CircuitBreakerError'> Failures threshold reached, circuit breaker opened
+#1 2018-07-27 08:06:44 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+#2 2018-07-27 08:06:45 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+#1 2018-07-27 08:06:46 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+#2 2018-07-27 08:06:47 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+#1 2018-07-27 08:06:48 / NG / <class 'pybreaker.CircuitBreakerError'> Trial call failed, circuit breaker opened
+#2 2018-07-27 08:06:49 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+#1 2018-07-27 08:06:50 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+#2 2018-07-27 08:06:51 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+#1 2018-07-27 08:06:52 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+#2 2018-07-27 08:06:53 / NG / <class 'pybreaker.CircuitBreakerError'> Trial call failed, circuit breaker opened
+#1 2018-07-27 08:06:54 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+#2 2018-07-27 08:06:55 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+#1 2018-07-27 08:06:56 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+#2 2018-07-27 08:06:57 / <class 'pybreaker.CircuitBreakerError'> Timeout not elapsed yet, circuit breaker still open
+#1 2018-07-27 08:06:58 / OK
+#2 2018-07-27 08:06:59 / OK
 ```
