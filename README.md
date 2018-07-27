@@ -13,11 +13,11 @@ $ cd pybreaker-playground
 # Build images
 $ docker-compose build
 
-# Start a Redis server
-$ docker-compose up -d redis
-
 # Run a single thread script (Send Ctrl+C to stop)
 $ docker-compose run --rm playground python scripts/single_thread.py
+
+# Start a Redis server
+$ docker-compose up -d redis
 
 # Run a multi thread script (Send Ctrl+C to stop)
 $ docker-compose run --rm playground python scripts/multi_thread.py
