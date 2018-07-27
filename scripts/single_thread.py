@@ -6,20 +6,20 @@ from time import sleep
 
 def fragile_function():
     if randint(0, 1) == 1:
-        print('OK', end='')
+        print(' / OK', end='')
     else:
-        print('NG / ', end='')
+        print(' / NG', end='')
         raise Exception('This is a sample Exception')
 
 
 def main(breaker):
     while True:
-        print(datetime.now().strftime('%Y-%m-%d %H:%M:%S '), end='')
+        print(datetime.now().strftime('%Y-%m-%d %H:%M:%S'), end='')
 
         try:
             breaker.call(fragile_function)
         except Exception as e:
-            print('{} {}'.format(type(e), e), end='')
+            print(' / {} {}'.format(type(e), e), end='')
         finally:
             print('')
             sleep(1)
